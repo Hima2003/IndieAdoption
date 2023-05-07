@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Responsive Registration Form | CodingLab</title>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="../css/report.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+      <div class="main" style="margin-top: 5rem;">
+         <div class="container">
+            <div class="title">Report Form</div>
+            <div class="content">
+               <form action="http://localhost:5002/report" method="post">
+                  <div class="user-details">
+                     <div class="input-box">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                     </div>
+                     <div class="input-box">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                     </div>
+                     <div class="input-box">
+                        <label for="phonenumber">Primary Number</label>
+                        <input type="tel" id="phonenumber" name="phonenumber" placeholder="Enter your number" required>
+                     </div>
+                     <div class="input-box">
+                        <label for="second_phonenumber">Secondary Number</label>
+                        <input type="tel" id="second_phonenumber" name="second_phonenumber" placeholder="Enter your number">
+                     </div>
+                     <div class="input-box">
+                        <label for="state">State</label>
+                        <input type="text" id="state" name="state" placeholder="Enter your state" required>
+                     </div>
+                     <div class="input-box">
+                        <label for="district">District</label>
+                        <input type="text" id="district" name="district" placeholder="Enter your district" required>
+                     </div>
+                     <div class="input-box">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" placeholder="Enter your city" required>
+                     </div>
+                     <div class="input-box">
+                        <label for="comment">Report</label>
+                        <textarea id="comment" name="comment" placeholder="Enter your report" required></textarea>
+                     </div>
+                     <div>
+                        <button type="submit">SUBMIT</button>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

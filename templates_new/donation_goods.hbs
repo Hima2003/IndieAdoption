@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dog Goods Donation Form</title>
+  <style>
+       body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: orange;
+      background-image: url(dogreal.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    label {
+      display:  block;
+      margin-bottom: 10px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+    .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+    
+    input[type="submit"] {
+      background-color: orange;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    input[type="submit"]:hover {
+      background-color:orange;
+    }
+    .container{
+        border: solid 1.3px black;
+        width:35rem;
+        margin: 5rem;
+        margin-left: 15rem;
+        padding:1rem ;
+        background-color: antiquewhite;
+    }
+  </style>
+  <script>
+    function showPopup() {
+      var goodsTypes = document.getElementsByName('goods-type');
+      var selectedTypes = [];
+      
+      for (var i = 0; i < goodsTypes.length; i++) {
+        if (goodsTypes[i].checked) {
+          selectedTypes.push(goodsTypes[i].value);
+        }
+      }
+      
+      if (selectedTypes.length > 0) {
+        var message = "Thank you for the love you shower!\nYou selected: " + selectedTypes.join(", ");
+        alert(message);
+      } else {
+        alert("Please select at least one goods type.");
+      }
+    }
+  </script>
+</head>
+<body>
+<div class="container">
+  <h1>Donate Dog Goods</h1>
+  <form action="http://localhost:5002/donation_goods" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" name="phone" required>
+    
+    <label for="address">Address:</label>
+    <textarea id="address" name="address" required></textarea>
+    <label for="goods">Goods to Donate:</label>
+    <label>
+      <input type="checkbox" name="goods-type" value="soft-toys"> Soft Toys
+    </label>
+    <label>
+      <input type="checkbox" name="goods-type" value="slow-feeders"> Slow Feeders
+    </label>
+    <label>
+      <input type="checkbox" name="goods-type" value="blankets"> Blankets
+    </label>
+    <label>
+      <input type="checkbox" name="goods-type" value="towels"> Towels
+    </label>
+    <label>
+      <input type="checkbox" name="goods-type" value="carriers"> Carriers
+    </label>
+    <label>
+        <input type="checkbox" name="goods-type" value="others"> others
+      </label>
+    <div class="row">
+        <div class="col-75">
+    <label for="pickup-date">Preferred Pickup Date:</label>
+    </div>
+    <div class="col-25">
+    <input type="date" id="pickup-date" name="pickup-date" required><br>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-75">
+    <label for="pickup-time">Preferred Pickup Time:</label>
+    </div>
+    <div class="col-25">
+    <input type="time" id="pickup-time" name="pickup-time" required><br>
+    </div>
+    </div>
+
+    <input type="submit" value="Submit" onclick="showPopup()">
+    <br>
+  </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            flex-basis: 30%;
+            width: 300px;
+            margin: 10px;
+            padding: 10px;
+            background-color: antiquewhite;
+            border: 1px solid #0643b5;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            background-color: orange;
+        }
+        nav {
+            overflow: hidden;
+        }
+
+        nav a.logo {
+            float: left;
+            margin-left: 1000px;
+            padding: 16px;
+            color: black;
+            text-decoration: none;
+            font-size: 20px;
+            background-color: antiquewhite;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            float: right;
+        }
+
+        nav ul li {
+            float: left;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #111;
+        }
+        .bn7 {
+        cursor: pointer;
+        outline: none;
+        border: none;
+        background-color: antiquewhite;
+        padding: 0.3em 1.2em;
+        border-radius: 30px;
+        font-size: 1.2rem;
+        color: #000000;
+        background-size: 100% 100%;
+        }
+
+
+    </style>
+
+    <script>
+        function deleteCard(cardElement) {
+            const cardId = cardElement.getAttribute("data-card-id");
+            fetch(`/api/users/${cardId}`, {
+                method: "DELETE",
+            })
+            .then(response => {
+                if (response.ok) {
+                    cardElement.remove();
+                } else {
+                    alert("Failed to delete card from the server.");
+                }
+            })
+            .catch(error => {
+                alert(`Error deleting card from the server: ${error.message}`);
+            });
+        }
+    </script> 
+</head>
+<body>
+    <div>
+        <nav>
+            <a href="http://localhost:5002/adminpage" class="logo bn7">Home</a>
+
+        </nav>
+        <h1>Goods Donated</h1>
+          
+        <div class="card-container">
+            {{#each users2}}
+                <div class="card" data-card-id="{{ this._id }}">
+                    <div class="card-content">
+                        {{!-- <h1>hh</h1> --}}
+                        <h2>{{ this.name }}</h2>
+                        <p>Email: {{ this.email }}</p>
+                        <p>Phone: {{ this.phone }}</p>
+                        <p>address: {{ this.address }}</p>
+                        <p>goods: {{ this.goods }}</p>
+                        <p>pickup-date: {{ this.pickupDate }}</p>
+                        <p>pickup-time: {{ this.pickupTime }}</p>
+                        {{!-- <p>Comment: {{ this.comment }}</p> --}}
+                        <button onclick="deleteCard(this.parentNode.parentNode)">Delete</button>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</body>
+</html>

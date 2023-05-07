@@ -1,0 +1,213 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'poppins',sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url(https://user-images.githubusercontent.com/13468728/233847739-219cb494-c265-4554-820a-bd3424c59065.jpg);
+  background-image: url(dogreal.png);
+  background-color: orange;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+section {
+    position: relative;
+    width:500px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(55px);
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 3rem;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+}
+
+.inputbox {
+    position: relative;
+    margin: 30px 0;
+    max-width: 310px;
+    border-bottom: 2px solid #fff;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+}
+
+input:focus ~ label, 
+input:valid ~ label {
+    top: -5px;
+}
+
+.inputbox input {
+    width: 100%;
+    height: 60px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 0 35px 0 5px;
+    color: #fff;
+}
+
+.inputbox ion-icon {
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2rem;
+    top: 20px;
+}
+
+.forget {
+    margin: 35px 0;
+    font-size: 0.9rem;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.forget label input {
+    margin-right: 3px;
+}
+
+.forget label a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.forget label a:hover {
+    text-decoration: underline;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.register {
+    font-size: 0.9rem;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.register p a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+.register p a:hover {
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <section>
+        <form action="http://localhost:5002/admin_adopt_update" method="post" enctype="multipart/form-data">
+            <h1>Update-Adoption</h1>
+            <div class="input-row">
+            <div class="inputbox">
+                <ion-icon name="mail-outline"></ion-icon>
+                <input type="text"  name="name" required>
+                <label for="">Name</label>
+            </div>
+            </div>
+            {{!-- <div class="input-row">
+            {{!-- <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="text"name="id" required>
+                <label for="">ID</label>
+            </div> --}}
+            </div> --}}
+            {{!-- <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="text" name="name" required>
+                <label for="">Name</label>
+            </div> --}}
+            <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="text" name="state" required>
+                <label for="">state</label>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="text" name="city" required>
+                <label for="">City</label>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="text" name="pincode" required>
+                <label for="">Pincode</label>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="text"name="gender" required>
+                <label for="">Gender</label>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="text" name="sterilized" required>
+                <label for="">Sterilized</label>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="number" name="age" required>
+                <label for="">Age</label>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="text" name="breed" required>
+                <label for="">Breed</label>
+            </div>
+            <div class="inputbox">
+            <!-- <ion-icon name="lock-closed-outline"></ion-icon> -->
+            <label for="myfile">Select files:</label>
+            <input type="file" id="myfile" name="image" multiple><br><br>
+            </div>
+            <button>SUBMIT</button>
+            <!-- <div class="register">
+                <p>Don't have a account <a href="#">Register</a></p>
+            </div> -->
+        </form>
+    </section>
+</body>
+</html>
+<!-- //name id city state pincode gender sterlized/not age breed  -->

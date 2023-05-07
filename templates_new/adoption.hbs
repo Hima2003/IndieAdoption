@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Responsive Registration Form | CodingLab</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Adoptionform.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: orange;
+}
+.container{
+  width: 40rem;
+  background-color: #fff;
+  height:50rem;
+  padding: 50px 30px;
+  /* border-radius: 5px; */
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  /* margin-left: 40%; */
+  background-color: antiquewhite;
+}
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+  text-align: center;
+}
+.container .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  /* background: linear-gradient(135deg, #71b7e6, #9b59b6); */
+}
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: black;
+}
+ form .gender-details .gender-title{
+  font-size: 20px;
+  font-weight: 500;
+ }
+ form .category{
+   display: flex;
+   width: 80%;
+   margin: 14px 0 ;
+   justify-content: space-between;
+ }
+ form .category label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+ }
+ form .category label .dot{
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+ #dot-1:checked ~ .category label .one,
+ #dot-2:checked ~ .category label .two,
+ #dot-3:checked ~ .category label .three{
+   background: #9b59b6;
+   border-color: #d9d9d9;
+ }
+ form input[type="radio"]{
+   display: none;
+ }
+ form .button{
+   height: 45px;
+   margin: 50px 0
+ }
+ form .button input{
+   height: 90%;
+   width: 90%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+ }
+ form .button input:hover{
+    transform: scale(0.99);
+    background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+  }
+
+button{
+    font-size: 15px;
+    color:black;
+    padding: 10px 25px;
+    background: orange;
+    border: 1px solid black;
+    border-radius: 20px;
+    outline:none;
+    cursor: pointer;
+    margin-left: 270%;
+    margin-top: -0.5rem;
+}
+button:hover{
+    background-color: antiquewhite;
+    color:orange;    
+}
+.main{
+    height: 36rem;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+/* Mobile layout */
+.container {
+  width: 100%;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  /* Floating column for inputs: 75% width */
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  input[type=submit]{
+    margin: 5px;
+    color: black;
+    padding: 12px 20px;
+    background: orange;
+    border: 1px solid orange;
+    border-radius: 20px;
+    outline:none;
+    cursor: pointer;
+    margin-left: 400px;
+    
+  }
+  input[type=submit]:hover{
+    background-color: white;
+  }
+  
+/* Tablet layout */
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+}
+
+/* Desktop layout */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+}
+
+/* Adjust font size for small screens */
+@media (max-width: 480px) {
+  .details, .report {
+    font-size: 0.8rem;
+  }
+}
+
+/* Adjust input and textarea height for small screens */
+@media (max-width: 360px) {
+  input[type="text"], input[type="tel"], textarea {
+    height: 2.5rem;
+  }
+}
+    </style>
+   </head>
+  
+<body>
+    <div class="main" style="margin-top: 5rem;">
+    <!-- <div style="float: left">
+        <img src="dogreal3.png" style="width:30rem;height:36rem">
+    </div> -->
+  <div class="container" style="float:right">
+    <div class="title">Adoption Form</div>
+    <div class="content">
+      <form action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Dog Name</span>
+            <input type="text" placeholder="Enter dog name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Adopter Name</span>
+            <input type="text" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Co-adopter Name</span>
+            <input type="text" placeholder="Enter your Co-adopter name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Primary Number</span>
+            <input type="tel" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Secondary Number</span>
+            <input type="tel" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Co-adopter contact Number</span>
+            <input type="tel" placeholder="Enter your Co-adopter number" required>
+          </div>
+        <div class="input-box">
+            <span class="details">Street address</span>
+            <input type="text" placeholder="Enter your street address" required>
+          </div>
+        <div class="input-box">
+            <span class="details">District</span>
+            <input type="text" placeholder="Enter your district" required>
+          </div>
+        <div class="input-box">
+            <span class="details">State</span>
+            <input type="text" placeholder="Enter your state name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">zipcode</span>
+            <input type="text" placeholder="Enter your zipcode" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Adopter Email id</span>
+            <input type="text" placeholder="Enter your Adopter Email id" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Co-adopter Email id</span>
+            <input type="text" placeholder="Enter your Co-adopter Email id" required>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="Monthly income">Monthly income</label>
+              </div>
+          <div class="col-75">
+          <label class="container">3,00,000 and above
+            <input type="checkbox">
+            <class="checkmark">
+          </label>
+          
+          <label class="container">50,000-3,00,000
+            <input type="checkbox">
+            <class="checkmark">
+          </label>
+          
+          <label class="container">12,500-50,000
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">12,500 and below
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          </div>
+          </div>
+          <div >
+            <!-- <p>Please read the below and check the box</p> -->
+            <div class="row">
+                <div class="col-75">
+                  <class="container">I have provided correct and concise information
+                </div>
+                <div class="col-25">
+                    <input type="checkbox">
+                    <class="checkmark">
+                </div>
+            </div>
+            <div>
+              <input type="submit" value="Submit">
+            </div>
+      </form>
+</body>
+</html>
